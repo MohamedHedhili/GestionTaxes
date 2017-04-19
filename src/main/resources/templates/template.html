@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" href="../static/css/myStyle.css"
+	th:href="@{/css/myStyle.css}" />
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap-theme.min.css"
+	th:href="@{css/bootstrap-theme.min.css}" />
+<title>Accueil</title>
+</head>
+<body>
+	<header>
+		<div class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+				<li><a  th:inline="text">Bienvenue [[${#httpServletRequest.remoteUser}]]</a></li>
+					<li><a th:href="@{/entreprises}">Entreprises</a></li>
+					<li><a th:href="@{/taxes}">Taxes</a></li>
+					<li><a th:href="@{/formEntreprise}">Ajouter Entreprise</a></li>
+					
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right ">
+					<li><a th:href="@{/login?logout}">Déconnexion</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</header>
+	<section layout:fragment="content"></section>
+	<footer class="footer">
+		<div class=" container navbar-fixed-bottom " >
+		
+			<small> @Réaliser  par Hedhili Mohamed Projet gestion des Taxes Copyright2017 </small>
+		</div>
+	</footer>
+</body>
+</html>

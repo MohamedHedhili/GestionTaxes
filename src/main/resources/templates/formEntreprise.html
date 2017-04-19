@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
+	layout:decorator="template">
+<head>
+<meta charset="utf-8"/>
+<title>Form</title>
+</head>
+<body>
+
+<div layout:fragment="content"  class="container">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="panel panel-primary">
+<div class="panel-heading"> Ajouter une Entreprise </div>
+<div class="panel-body">
+<form th:action="@{/addEntreprise}"  method="post">
+<div class="form-group">
+<label class="control-label" > Nom Entreprise : </label>
+<input class="form-control" type="text" name="nom" th:value="${entreprise.nom}"/>
+<span  class="text-danger" th:errors="${entreprise.nom}"></span>
+</div>
+<div class="form-group">
+<label class="control-label"> E-mail de l'entreprise </label>
+<input class="form-control" type="text" name="email" th:value="${entreprise.email}"/>
+<span  class="text-danger" th:errors="${entreprise.email}"></span>
+</div>
+<div class="form-group">
+<label class="control-label">Raison social de l'entreprise </label>
+<input class="form-control" type="text" name="raisonSociale" th:value="${entreprise.raisonSociale}"/>
+
+<span class="text-danger" th:errors="${entreprise.raisonSociale}"></span>
+</div>
+<button type="submit" class="btn btn-primary">Valider</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
